@@ -1,0 +1,21 @@
+{
+  "name": "302kemporium",
+  "version": "2.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "author": "TiberiusCG",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^5.2.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Lekalakala-KM/302KEmporium.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Lekalakala-KM/302KEmporium/issues"
+  },
+  "homepage": "https://github.com/Lekalakala-KM/302KEmporium#readme",
+  "description": ""
+}
