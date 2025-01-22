@@ -3,10 +3,797 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./output.css" rel="stylesheet" />
-    <title>Tailwind CSS with Vanilla JS</title>
+    <!-- tailwind classes styles -->
+    <link href="./src/output.css" rel="stylesheet" />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
+    <!-- material icon  -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=content_cut" />
+    <!-- project styles-->
+    <link rel="stylesheet" href="style.css" />
+    <!--FontAwesome Icons-->
+    
+    <script
+      src="https://kit.fontawesome.com/7c3c9953dc.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>302K Emporium | CMT & Clothing Manufacturer</title>
   </head>
+
   <body>
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
-  </body>
+    <nav id="nav" class="fixed z-20 shadow-md">
+      <div
+        class="navCont max-w-screen-2xl mx-auto p-5 py-10 md:py-5 md:h-fit flex flex-col md:flex-row items-center justify-center md:justify-between"
+      >
+        <div
+          class="fixed md:static top-3 flex flex-row justify-between w-full md:w-fit px-5 py-0"
+        >
+          <div class="brand text-[#ea9b03] text-[2rem]">
+            <a href="#home"><img
+              src="./assets/transparent for black1.png"
+              alt="302K Emporium logo"
+              width="80px"
+            />
+            </a>
+          </div>
+
+          <div class="hamburger md:hidden" onclick="toggleHamburger()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <div class="md:p-0 md:flex md:justify-end items-center">
+          <div
+            class="smnav-links md:hidden pt-16 h-screen flex flex-col text-center justify-center mx-auto md:mx-0 md:flex-row md:items-start gap-5 w-full md:w-fit md:h-fit md:static hidden"
+          >
+            <a
+              href="#home"
+              class="nav-link active"
+              onclick="makeActiveLink(this)"
+              >Home</a
+            >
+            <a href="#about" class="nav-link" onclick="makeActiveLink(this)"
+              >About</a
+            ><a href="#services" class="nav-link" onclick="makeActiveLink(this)"
+              >Services
+            </a>
+            <a href="#gallery" class="nav-link" onclick="makeActiveLink(this)"
+              >Gallery</a
+            >
+            <a href="#contacts" class="nav-link" onclick="makeActiveLink(this)"
+              >Contact Us</a
+            >
+          </div>
+          <div
+            class="nav-links hidden md:flex flex-row items-start gap-5 w-fit h-fit"
+          >
+            <a
+              href="#home"
+              class="nav-link active"
+              onclick="makeActiveLink(this)"
+              >Home</a
+            >
+            <a href="#about" class="nav-link" onclick="makeActiveLink(this)"
+              >About</a
+            ><a href="#services" class="nav-link" onclick="makeActiveLink(this)"
+              >Services
+            </a>
+            <a href="#gallery" class="nav-link" onclick="makeActiveLink(this)"
+              >Gallery</a
+            >
+            <a href="#contacts" class="nav-link" onclick="makeActiveLink(this)"
+              >Contact Us</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
+    <section id="hero" class="bg-[url('./assets/hero.png')] bg-cover bg-[center_bottom] lg:bg-[center] bg-no-repeat relative">
+      <div id="home" class="bg-black opacity-30 absolute top-0 left-0 right-0 bottom-0"></div>
+      <div
+        class="mx-auto px-4 py-28 flex h-screen items-center"
+      >
+        <div class="mx-auto max-w-2xl text-center z-10">
+          <h4 class="text-3xl font-extrabold sm:text-5xl lg:text-6xl text-[#faf9f6]">
+            High Resolution <br>
+            <strong class="font-extrabold text-[#f60f0e] sm:block">
+              Sublimation Printing
+            </strong>
+          </h4>
+
+          <p class="mt-4 sm:text-xl/relaxed text-[#faf9f6]">
+            For vibrant and unique designs that require a full spectrum of rich, saturated colors. Every detail is crisp, clear and leaves a lasting impression.
+          </p>
+
+          <div class="mt-8 flex flex-wrap justify-center gap-4">
+            <a
+              class="block w-[90%] rounded-md bg-[#f60f0e] px-12 py-3 text-sm font-medium text-[#faf9f6] shadow-md hover:underline underline-offset-2 focus:outline-none active:text-[#051565] sm:w-auto transition-all ease-in-out duration-500"
+              href="mailto:info@302kemporium.co.za?subject=Sublimation Order"
+              target="_blank"
+            >
+              Order Now
+            </a>
+
+            <a
+              class="block w-[90%] rounded-md px-12 py-3 text-sm font-medium text-[#f60f0e] shadow-md hover:underline underline-offset-2 focus:outline-none active:text-[#051565] sm:w-auto bg-[#faf9f6]"
+              href="#products"
+            >
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <section id="about" class="py-16 text-center">
+        <div class="mx-auto max-w-screen-xl px-4">
+          <h1 class="text-[#f60f0e] max-w-screen-lg mx-auto text-4xl lg:text-6xl font-extrabold capitalize mb-8">
+            Quality CMT, clothing manufacturer and retailer
+          </h1>
+          <p class="font-thin mb-4">
+            302K Emporium is a leading clothing manufacturer specializing in the
+            bulk production and supply of uniforms, corporate wear, personal
+            protective equipment (PPE), sportswear, linen, and headwear. We
+            pride ourselves on our commitment to delivering high-quality
+            products and exceptional service while building a customer-centric
+            business that caters to a global audience.
+          </p>
+          <p class="font-thin mb-4">
+            Our CMT Studio is located in the heart of Polokwane CBD, and while
+            we primarily operate within the greater Limpopo region in
+            partnership with local distributors, our reach extends to customers
+            around the world. We utilize reputable courier services to ensure
+            timely delivery and satisfaction for our international clientele.
+          </p>
+
+          <div id="extraContent" class="hidden">
+            <p class="font-thin mb-4">
+              As a high-volume manufacturer serving all genders and age groups,
+              we maintain substantial stock levels to facilitate rapid
+              distribution with minimal waiting periods. Our continuous market
+              and manufacturing research enhance our product knowledge, allowing
+              us to provide valuable offerings that resonate with customers
+              globally and ensure that our clothing label is well-received in
+              diverse markets.
+            </p>
+            <p class="font-thin mb-4">
+              At 302K Emporium, we understand that our strength lies in our
+              people. We invest in building strong, engaged teams dedicated to
+              producing and delivering reasonably priced products and services
+              that reflect the quality and exclusivity our brand represents. We
+              utilize high-end materials such as cotton, wool blends, and
+              high-gauge denims, guaranteeing premium products that customers
+              worldwide are happy to invest in, thanks to their exceptional
+              quality and return on investment.
+            </p>
+          </div>
+
+
+        <div class="mt-8 flex flex-wrap justify-center gap-6">
+          <a 
+            class="block rounded-md bg-[#f60f0e] px-12 py-3 text-sm font-medium text-[#faf9f6] shadow-md hover:underline underline-offset-2 focus:outline-none active:text-[#051565] sm:w-auto transition-all ease-in-out duration-500"
+            href="mailto:info@302kemporium.co.za"
+            target="_blank"
+          >
+            Get in touch
+        </a>
+
+          <button 
+          id="readMore"
+          onclick="toggleReadMore()"
+            class="block rounded-md px-12 py-3 text-sm font-medium text-[#f60f0e] border-[1px] border-[#f60f0e] shadow-md hover:underline underline-offset-2 focus:outline-none active:text-[#051565] sm:w-auto bg-[#faf9f6]"
+            href="#sublimation"
+          >
+            Read More
+          </button>
+        </div>
+
+        </div>
+        </div>
+          <!-- <img
+          src="./src/assets/teal3.png"
+          alt=""
+          class="h-[70vh] w-full object-cover pt-16"
+          style="object-position: 50% 45%;"
+        /> -->
+        
+      </section>
+
+      <section id="products" class="py-16 bg-[#ea9b03]">
+        <div class="text-center mb-16">
+            <h1 class="text-[#051565] max-w-screen-lg mx-auto text-4xl lg:text-6xl font-extrabold capitalize mb-4">
+              Our Products
+            </h1>
+            <p class="font-thin text-2xl text-[#faf9f6] capitalize">
+              Where your vision meets fashion craftsmanship
+            </p>
+          </div>
+        
+        <!-- Slider -->
+        <div data-hs-carousel='{
+          "loadingClasses": "opacity-0",
+          "isAutoPlay": true,
+          "dotsItemClasses": "hs-carousel-active:bg-blue-700 hs-carousel-active:border-blue-700 size-3 border border-gray-400 rounded-full cursor-pointer"          
+        }' class="relative lg:max-w-[80vw] px-4 lg:px-8 mx-auto">
+        <div class="hs-carousel relative overflow-hidden min-h-96">
+          <div class="hs-carousel-body absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
+
+            <div class="hs-carousel-slide bg-[url('./assets/mustard.png')] bg-cover bg-[center] lg:bg-none flex justify-center items-center lg:block rounded-md lg:rounded-none">
+              <div class="mx-auto max-w-screen-xl px-4">
+                <div
+                  class="lg:grid lg:grid-cols-2 lg:items-center lg:gap-10"
+                >
+                  <div>
+                    <div class=" text-center lg:text-start">
+                      <h2 class="text-2xl font-bold capitalize text-[#051565] sm:text-3xl max-w-md lg:max-w-auto">
+                        Round Neck Sweaters in assorted colours
+                      </h2>
+                      <p class="text-xl text-[#faf9f6] font-semibold mt-3">From <span>R400.00</span></p>
+      
+                      <p class="mt-4 text-[#051565] font-light hidden lg:block">
+                        Stay cozy and chic with our round neck sweaters. Crafted from soft, breathable fabric, these sweaters offer a relaxed fit and timeless style, making them ideal for layering or solo wear any season. Choose from a range of standard colors: Red, Black, White, Navy, and Royal.
+                      </p>
+                    </div>
+                    <a
+                    class="block w-fit mx-auto lg:mx-0 mt-4 rounded-md bg-[#051565] px-12 py-3 text-center lg:text-start font-medium text-[#faf9f6] shadow-md hover:underline underline-offset-2 focus:outline-none active:text-[#ea9b03] transition-all ease-in-out duration-500"
+                    href="mailto:info@302kemporium.co.za?subject=Sublimation Order"
+                    target="_blank"
+                  >
+                    Order Now
+                  </a>
+                  </div>
+      
+                  <img
+                      src="./src/assets/mustard.png"
+                      class="hidden lg:block rounded-md lg:min-h-full"
+                      alt=""
+                    />
+                </div>
+              </div>
+            </div>
+
+            <div class="hs-carousel-slide bg-[url('./assets/hats.jpg')] bg-cover bg-[center] lg:bg-none flex justify-center items-center lg:block rounded-md lg:rounded-none">
+              <div class="mx-auto max-w-screen-xl px-4">
+                <div
+                  class="lg:grid lg:grid-cols-2 lg:items-center lg:gap-10"
+                >
+                  <div>
+                    <div class=" text-center lg:text-start">
+                      <h2 class="text-2xl font-bold capitalize text-[#051565] sm:text-3xl max-w-md lg:max-w-auto">
+                        Bucket Hats with Embroidered Logos
+                      </h2>
+                      <p class="text-xl text-[#faf9f6] font-semibold mt-3">From <span>R250.00</span></p>
+      
+                      <p class="mt-4 text-[#051565] font-light hidden lg:block">
+                        Elevate your style with our trendy bucket hats featuring unique embroidered logos. Perfect for sunny days, these hats combine comfort and flair, making them a must-have accessory for any outfit. Available in a variety of standard colors including Red, Black, White, Navy, and Royal.
+                      </p>
+                    </div>
+                    <a
+                    class="block w-fit mx-auto lg:mx-0 mt-4 rounded-md bg-[#051565] px-12 py-3 text-center lg:text-start font-medium text-[#faf9f6] shadow-md hover:underline underline-offset-2 focus:outline-none active:text-[#ea9b03] transition-all ease-in-out duration-500"
+                    href="mailto:info@302kemporium.co.za?subject=Bucket Hats Order"
+                    target="_blank"
+                  >
+                    Order Now
+                  </a>
+                  </div>
+      
+                  <img
+                      src="./src/assets/hats.jpg"
+                      class="hidden lg:block rounded-md lg:min-h-full"
+                      alt=""
+                    />
+                </div>
+              </div>
+            </div>
+
+            <div class="hs-carousel-slide bg-[url('./assets/hoodie.jpg')] bg-cover bg-[center] lg:bg-none flex justify-center items-center lg:block rounded-md lg:rounded-none">
+              <div class="mx-auto max-w-screen-xl px-4">
+                <div
+                  class="lg:grid lg:grid-cols-2 lg:items-center lg:gap-10"
+                >
+                  <div>
+                    <div class=" text-center lg:text-start">
+                      <h2 class="text-2xl font-bold capitalize text-[#051565] sm:text-3xl max-w-md lg:max-w-auto">
+                        Hoodies
+                      </h2>
+                      <p class="text-xl text-[#faf9f6] font-semibold mt-3">From <span>R450.00</span></p>
+      
+                      <p class="mt-4 text-[#051565] font-light hidden lg:block">
+                        Stay warm and stylish with our versatile hoodies. Featuring a classic design and soft, durable fabric, these hoodies are perfect for lounging at home or hitting the streets. Elevate your casual look effortlessly. Available in a variety of standard colors including Red, Black, White, Navy, and Royal.
+                      </p>
+                    </div>
+                    <a
+                    class="block w-fit mx-auto lg:mx-0 mt-4 rounded-md bg-[#051565] px-12 py-3 text-center lg:text-start font-medium text-[#faf9f6] shadow-md hover:underline underline-offset-2 focus:outline-none active:text-[#ea9b03] transition-all ease-in-out duration-500"
+                    href="mailto:info@302kemporium.co.za?subject=Hoodies Order"
+                    target="_blank"
+                  >
+                    Order Now
+                  </a>
+                  </div>
+      
+                  <img
+                      src="./src/assets/hoodie.jpg"
+                      class="hidden lg:block rounded-md lg:min-h-full"
+                      alt=""
+                    />
+                </div>
+              </div>
+            </div>
+
+            <div class="hs-carousel-slide bg-[url('./assets/tote.jpg')] bg-cover bg-[center] lg:bg-none flex justify-center items-center lg:block rounded-md lg:rounded-none">
+              <div class="mx-auto max-w-screen-xl px-4">
+                <div
+                  class="lg:grid lg:grid-cols-2 lg:items-center lg:gap-10"
+                >
+                  <div>
+                    <div class=" text-center lg:text-start">
+                      <h2 class="text-2xl font-bold capitalize text-[#051565] sm:text-3xl max-w-md lg:max-w-auto">
+                        Tote Bags
+                      </h2>
+                      <p class="text-xl text-[#faf9f6] font-semibold mt-3">From <span>R250.00</span></p>
+      
+                      <p class="mt-4 text-[#051565] font-light hidden lg:block">
+                        Our stylish tote bags are the perfect blend of functionality and fashion. Spacious and durable, these bags are ideal for daily use—whether you're heading to the beach or running errands, carry your essentials in style. Choose from a variety of standard colors: Red, Black, White, Navy, and Royal.
+                      </p>
+                    </div>
+                    <a
+                    class="block w-fit mx-auto lg:mx-0 mt-4 rounded-md bg-[#051565] px-12 py-3 text-center lg:text-start font-medium text-[#faf9f6] shadow-md hover:underline underline-offset-2 focus:outline-none active:text-[#ea9b03] transition-all ease-in-out duration-500"
+                    href="mailto:info@302kemporium.co.za?subject=Tote Bags Order"
+                    target="_blank"
+                  >
+                    Order Now
+                  </a>
+                  </div>
+      
+                  <img
+                      src="./src/assets/tote.jpg"
+                      class="hidden lg:block rounded-md lg:min-h-full"
+                      alt=""
+                    />
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="hs-carousel-slide bg-[url('./assets/ombre.jpg')] bg-cover bg-[center] lg:bg-none flex justify-center items-center lg:block rounded-md lg:rounded-none">
+              <div class="mx-auto max-w-screen-xl px-4">
+                <div
+                  class="lg:grid lg:grid-cols-2 lg:items-center lg:gap-10"
+                >
+                  <div>
+                    <div class=" text-center lg:text-start">
+                      <h2 class="text-2xl font-bold capitalize text-[#051565] sm:text-3xl max-w-md lg:max-w-auto">
+                        Ombré Hoodies
+                      </h2>
+                      <p class="text-xl text-[#faf9f6] font-semibold mt-3">From <span>R525.00</span></p>
+      
+                      <p class="mt-4 text-[#051565] font-light hidden lg:block">
+                        Make a bold statement with our stylish ombré hoddies. Featuring a captivating gradient design that seamlessly transitions between colors, that adds a unique flair to your wardrobe. Crafted from soft, high-quality fabric, they provide warmth and comfort while ensuring you stand out from the crowd. Available in a variety of standard colors, including Red, Black, White, Navy, and Royal. 
+                      </p>
+                    </div>
+                    <a
+                    class="block w-fit mx-auto lg:mx-0 mt-4 rounded-md bg-[#051565] px-12 py-3 text-center lg:text-start font-medium text-[#faf9f6] shadow-md hover:underline underline-offset-2 focus:outline-none active:text-[#ea9b03] transition-all ease-in-out duration-500"
+                    href="mailto:info@302kemporium.co.za?subject=Ombre Hoodies Order"
+                    target="_blank"
+                  >
+                    Order Now
+                  </a>
+                  </div>
+      
+                  <img
+                      src="./src/assets/ombre.jpg"
+                      class="hidden lg:block rounded-md lg:min-h-full"
+                      alt=""
+                    />
+                </div>
+              </div>
+            </div>
+
+            <div class="hs-carousel-slide bg-[url('./assets/puffer.jpg')] bg-cover bg-[center] lg:bg-none flex justify-center items-center lg:block rounded-md lg:rounded-none">
+              <div class="mx-auto max-w-screen-xl px-4">
+                <div
+                  class="lg:grid lg:grid-cols-2 lg:items-center lg:gap-10"
+                >
+                  <div>
+                    <div class=" text-center lg:text-start">
+                      <h2 class="text-2xl font-bold capitalize text-[#051565] sm:text-3xl max-w-md lg:max-w-auto">
+                        Puffer Jackets
+                      </h2>
+                      <p class="text-xl text-[#faf9f6] font-semibold mt-3">From <span>R650.00</span></p>
+      
+                      <p class="mt-4 text-[#051565] font-light hidden lg:block">
+                        Conquer the cold with our sleek puffer jackets. Designed for warmth and comfort, these jackets feature a lightweight yet insulated construction, allowing you to stay cozy while looking effortlessly cool in any weather. Available in a variety of standard colors including Red, Black, White, Navy, and Royal.
+                      </p>
+                    </div>
+                    <a
+                    class="block w-fit mx-auto lg:mx-0 mt-4 rounded-md bg-[#051565] px-12 py-3 text-center lg:text-start font-medium text-[#faf9f6] shadow-md hover:underline underline-offset-2 focus:outline-none active:text-[#ea9b03] transition-all ease-in-out duration-500"
+                    href="mailto:info@302kemporium.co.za?subject=Puffer Jackets Order"
+                    target="_blank"
+                  >
+                    Order Now
+                  </a>
+                  </div>
+      
+                  <img
+                      src="./src/assets/puffer.jpg"
+                      class="hidden lg:block rounded-md lg:min-h-full"
+                      alt=""
+                    />
+                </div>
+              </div>
+            </div>
+            
+            <div class="hs-carousel-slide bg-[url('./assets/apron.jpg')] bg-cover bg-[center] lg:bg-none flex justify-center items-center lg:block rounded-md lg:rounded-none">
+              <div class="mx-auto max-w-screen-xl px-4">
+                <div
+                  class="lg:grid lg:grid-cols-2 lg:items-center lg:gap-10"
+                >
+                  <div>
+                    <div class=" text-center lg:text-start">
+                      <h2 class="text-2xl font-bold capitalize text-[#051565] sm:text-3xl max-w-md lg:max-w-auto">
+                        Kitchen Aprons
+                      </h2>
+                      <p class="text-xl text-[#faf9f6] font-semibold mt-3">From <span>R250.00</span></p>
+      
+                      <p class="mt-4 text-[#051565] font-light hidden lg:block">
+                        Elevate your cooking or crafting experience with our chic apron. Made from durable, easy-to-clean fabric, it includes an adjustable neck strap and spacious front pockets for your essentials. Whether you're in the kitchen or at the art table, this trendy apron combines functionality with flair.
+                      </p>
+                    </div>
+                    <a
+                    class="block w-fit mx-auto lg:mx-0 mt-4 rounded-md bg-[#051565] px-12 py-3 text-center lg:text-start font-medium text-[#faf9f6] shadow-md hover:underline underline-offset-2 focus:outline-none active:text-[#ea9b03] transition-all ease-in-out duration-500"
+                    href="mailto:info@302kemporium.co.za?subject=Aprons Order"
+                    target="_blank"
+                  >
+                    Order Now
+                  </a>
+                  </div>
+      
+                  <img
+                      src="./src/assets/apron.jpg"
+                      class="hidden lg:block rounded-md lg:min-h-full"
+                      alt=""
+                    />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="hs-carousel-prev hs-carousel-disabled:opacity-50 hs-carousel-disabled:pointer-events-none absolute inset-y-0 start-0 inline-flex justify-center items-center w-[46px] h-full text-gray-800 hover:bg-gray-800/10 focus:outline-none focus:bg-gray-800/10 rounded-s-lg dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10 mx-4 lg:mx-0">
+          <span class="text-2xl" aria-hidden="true">
+            <svg class="shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m15 18-6-6 6-6"></path>
+            </svg>
+          </span>
+          <span class="sr-only">Previous</span>
+        </button>
+        <button type="button" class="hs-carousel-next hs-carousel-disabled:opacity-50 hs-carousel-disabled:pointer-events-none absolute inset-y-0 end-0 inline-flex justify-center items-center w-[46px] h-full text-gray-800 hover:bg-gray-800/10 focus:outline-none focus:bg-gray-800/10 rounded-e-lg dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10 mx-4 lg:mx-0">
+          <span class="sr-only">Next</span>
+          <span class="text-2xl" aria-hidden="true">
+            <svg class="shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </span>
+        </button>
+
+        <div class="hs-carousel-pagination flex justify-center absolute bottom-6 start-0 end-0 space-x-2"></div>
+        </div>
+        <!-- End Slider -->
+      </section>
+
+      <section id="services" class="pb-16 text-[#faf9f6] bg-[#051565]">
+        <div
+        >
+        <div
+        class="relative mx-auto max-w-screen-2xl h-[80vh] flex items-center"
+        >
+        <video src="./src/assets/cmt.mp4" autoplay loop class="absolute bottom-0" style="width: 100%; height: 100%; object-fit: cover;"></video>
+            <div class="md:ms-24 z-10 mx-auto text-center md:text-start ">
+              <h1 class="text-3xl md:text-4xl font-extrabold text-[#faf9f6] sm:text-5xl capitalize">
+                CMT Services and 
+                <strong class="block font-extrabold text-[#f60f0e]">
+                  Precision Manufacturing
+                </strong>
+              </h1>
+
+              <p class="mt-4 max-w-lg text-[#faf9f6] text-lg font-thin">
+                Partner with our expert team for seamless Cut, Make, Trim (CMT) services. We transform your designs into high-quality garments, meeting the highest industry standards. Experience exceptional craftsmanship and attention to detail in every piece.
+              </p>
+
+              <div class="mt-8 mx-auto">
+                <a
+                  class=" w-[60%] rounded-md bg-[#ea9b03] px-12 py-3 text-semibold text-sm font-medium text-[#051565] shadow-md hover:underline underline-offset-2 focus:outline-none active:text-[#051565] sm:w-auto transition-all ease-in-out duration-500"
+                  href="mailto:info@302kemporium.co.za?subject=CMT Services"
+                  target="_blank"
+                >
+                  Enquire Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-16">
+          <div class="text-center mb-16">
+            <h1 class="text-[#f60f0e] max-w-screen-lg mx-auto text-4xl lg:text-6xl font-extrabold capitalize mb-4">
+              Our Services
+            </h1>
+            <p class="font-thin text-2xl capitalize">
+              Where your vision meets fashion craftsmanship
+            </p>
+          </div>
+     
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center place-content-center gap-6 px-4 pt-4 max-w-screen-xl mx-auto">
+            <div class="mb-10 lg:mb-0 text-center text-[#faf9f6] font-thin">
+              <div class="flex flex-col justify-center">
+                <i class="block fa-solid fa-scissors text-8xl "></i>
+  
+                <div class="mt-5 max-w-lg mx-auto">
+                <h3 class="text-[#ea9b03] text-lg font-bold uppercase mb-3">Cut, Make, Trim (CMT)</h3>
+                <p>Transform your designs into high-quality garments with our expert CMT services. We handle every step of the process to ensure your creations come to life with precision and care.</p>
+                <a
+                    class="block max-w-[75%] mx-auto rounded-md bg-[#f60f0e] mt-5 px-12 py-3 text-semibold text-sm font-medium text-[#faf9f6] shadow-md hover:underline underline-offset-2 focus:outline-none active:text-[#051565] sm:w-auto transition-all ease-in-out duration-500"
+                    href="mailto:info@302kemporium.co.za?subject=CMT Services"
+                    target="_blank"
+                  >
+                    Enquire Now
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-10 lg:mb-0 text-center text-[#faf9f6] font-thin">
+              <div class="flex flex-col justify-center">
+                <i class="fa-solid fa-shirt block text-8xl"></i>
+  
+                <div class="mt-5 max-w-lg mx-auto">
+                <h3 class="text-[#ea9b03] text-lg font-bold uppercase mb-3">Fashion Design</h3>
+                <p>Unleash your creativity with our comprehensive fashion design services. From concept to creation, we provide innovative solutions that bring your visionary styles to the forefront of fashion.</p>
+                <a
+                    class="block max-w-[75%] mx-auto rounded-md bg-[#f60f0e] mt-5 px-12 py-3 text-semibold text-sm font-medium text-[#faf9f6] shadow-md hover:underline underline-offset-2 focus:outline-none active:text-[#051565] sm:w-auto transition-all ease-in-out duration-500"
+                    href="mailto:info@302kemporium.co.za?subject=Fashion Design Services"
+                    target="_blank"
+                  >
+                    Enquire Now
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-10 lg:mb-0 text-center text-[#faf9f6] font-thin">
+              <div class="flex flex-col justify-center">
+                <i class="fa-solid fa-compass-drafting block text-8xl"></i>
+  
+                <div class="mt-5 max-w-lg mx-auto">
+                <h3 class="text-[#ea9b03] text-lg font-bold uppercase mb-3">Clothing Manufacturing</h3>
+                <p>Experience unmatched quality and efficiency with our clothing manufacturing services. We combine advanced techniques with meticulous craftsmanship to produce garments that exceed industry standards.</p>
+                <a
+                    class="block max-w-[75%] mx-auto rounded-md bg-[#f60f0e] mt-5 px-12 py-3 text-semibold text-sm font-medium text-[#faf9f6] shadow-md hover:underline underline-offset-2 focus:outline-none active:text-[#051565] sm:w-auto transition-all ease-in-out duration-500"
+                    href="mailto:info@302kemporium.co.za?subject=Manufacturing Services"
+                    target="_blank"
+                  >
+                    Enquire Now
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        
+      </section>
+ 
+      <section id="gallery" class="py-16">
+        <div class="text-center mb-16">
+          <h1 class="text-[#ea9b03] max-w-screen-lg mx-auto text-4xl lg:text-6xl font-extrabold capitalize mb-4">
+            Our Gallery
+          </h1>
+          <p class="font-thin text-2xl capitalize">
+            Proudly dressed by 302K Emporium
+          </p>
+        </div>
+
+      <div class="grid grid-cols-2 gap-4 md:grid-cols-4 py-8 max-w-screen-2xl px-4 mx-auto">
+        <div class="grid gap-4">
+          <div>
+            <img class="h-auto max-w-full rounded-md object-cover object-center" src="./src/assets/96a.jpg" width="986" height="657">
+          </div>
+          <div>
+            <img class="h-auto max-w-full rounded-md object-cover object-center " src="./src/assets/48a.jpg" width="462" height="822">
+          </div>
+          <div>
+            <img
+              class="h-auto max-w-full rounded-md object-cover object-center"
+              src="./src/assets/18a.jpg" width="1233" height="822">
+          </div>
+        </div>
+        <div class="grid gap-4">
+          <div>
+            <img
+              class="h-auto max-w-full rounded-md object-cover object-center"
+              src="./src/assets/48b.jpg" width="548" height="822">
+          </div>
+          <div>
+            <img
+              class="h-auto max-w-full rounded-md object-cover object-center"
+              src="./src/assets/96c.jpg" width="960" height="640">
+          </div>
+          <div>
+            <img
+              class="h-auto max-w-full rounded-md object-cover object-center "
+              src="./src/assets/33a.jpg"
+              alt="gallery-photo"
+              width="364" height="364"
+            />
+          </div>
+        </div>
+        <div class="grid gap-4">
+          <div>
+            
+            <img
+              class="h-auto max-w-full rounded-md object-cover object-center"
+              src="./src/assets/96b.jpg" width="960" height="640">
+          </div>
+          <div>
+            <img
+              class="h-auto max-w-full rounded-md object-cover object-center "
+              src="./src/assets/33b.jpg"
+              alt="gallery-photo"
+              width="364" height="364"
+            />
+          </div>
+          <div>
+            <img
+              class="h-auto max-w-full rounded-md object-cover object-center"
+              src="./src/assets/48e.jpg" width="548" height="822">
+          </div>
+        </div>
+        <div class="grid gap-4">
+          <div>
+            <img
+              class="h-auto max-w-full rounded-md object-cover object-center"
+              src="./src/assets/48d.jpg" width="548" height="822">
+          </div>
+          <div>
+            <img
+              class="h-auto max-w-full rounded-md object-cover object-center"
+              src="./src/assets/48c.jpg" width="548" height="822">
+          </div>
+        </div>
+      </div>
+    </section>
+    </main>
+
+    <aside>
+      <div class="px-4 py-16 bg-[#ea9b03]">
+        <div class="mx-auto max-w-3xl text-center">
+          <h6 class="text-2xl font-extrabold text-[#051565] md:text-3xl uppercase">
+            Subscribe to our Newsletter
+          </h6>
+
+          <p class="hidden sm:mt-4 sm:block text-[#faf9f6] font-light text-lg">
+            Stay informed about upcoming sales and competitions, and be the first to discover the latest trends and deals that 302K Emporium has to offer. Join our global community today!
+          </p>
+        </div>
+
+        <div class="mx-auto mt-8 max-w-xl">
+          <form class="sm:flex sm:gap-4"action="https://formsubmit.co/info@302kemporium.co.za" method="POST" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+          onsubmit="()=>
+          {
+            alert('Success')
+          }">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="New Subscriber on 302K Emporium.co.za">
+
+            <input type="hidden" name="_template" value="table">
+            <div class="sm:flex-1">
+              <label for="email" class="sr-only">Email</label>
+
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Email address"
+                required
+                class="w-full rounded-md bg-[#faf9f6] p-3 transition ease-in shadow-md"
+              />
+            </div>
+
+            <button
+              type="submit"
+              class="group mt-4 flex w-full items-center justify-center gap-2 rounded-md bg-[#f60f0e] px-5 py-3 text-[#faf9f6] transition focus:outline-none focus:ring ring-[#051565] focus:ring-yellow-400 sm:mt-0 sm:w-auto shadow-md"
+            >
+              <span class="text-sm font-medium"> Sign Up </span>
+
+              <svg
+                class="size-5 rtl:rotate-180"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </aside>
+
+    <footer id="footer" class="bg-[#051565] text-[#faf9f6] pb-16">
+      <div class="mx-auto">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11759.686859384352!2d29.46488146016249!3d-23.909057827527953!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec6d827df115513%3A0xd97cb7b2ad5ee58!2s53%20Landdros%20Mare%20St%2C%20Polokwane%20Central%2C%20Polokwane%2C%200700!5e0!3m2!1sen!2sza!4v1660607186381!5m2!1sen!2sza"
+          style="border: 0"
+          width="100%"
+          height="100%"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="mx-auto w-full h-[45vh]"
+        ></iframe>
+      </div>
+
+      <div id="contacts">
+        <!-- Container -->
+        <div class="px-4 pt-16 max-w-screen-2xl mx-auto">
+          <!-- Component -->
+          <div class="sm:flex-row flex justify-between flex-col">
+            <h2 class="font-bold text-3xl md:text-5xl w-full max-w-xl text-[#f60f0e]">
+              CMT and Clothing Manufacturer
+            </h2>
+            <div class="mt-8 md:mt-0">
+              <div class="mb-4 flex max-w-72 items-start justify-start">
+                <a href="https://wa.me/27827701833"><i class="fa-brands fa-whatsapp mr-3 text-[#f60f0e]"></i>082 770 1833</a></li>
+              </div>
+
+              <div class="mb-4 flex max-w-72 items-start justify-start">
+                <a href="tel:0827701833"><i class="fa-solid fa-phone mr-3 text-[#f60f0e]"></i>082 770 1833</a></li>
+              </div>
+
+              <div class="mb-4 flex max-w-72 items-start justify-start">
+                <a id="mail" href="mailto:info@302kemporium.co.za"><i class="fa-regular fa-envelope mr-3 text-[#f60f0e]"></i>info@302kemporium.co.za</a>
+              </div>
+
+              <div class="mb-4 flex max-w-72 items-start justify-start">
+                <a id="location" href="https://goo.gl/maps/RP5hz9GxzGfM44tK8" class="d-flex"><i class="fa-solid fa-map-pin mr-3 text-[#f60f0e]"></i>
+                  <span>53 Landros Mare Street
+                      Nedbank Building 
+                      Office Suite 408 
+                      Polokwane, 7000</span></a>
+              </div>
+            </div>
+          </div>
+          <hr class="my-8 opacity-50" />
+          <div
+            class="md:flex-row flex justify-between sm:items-center sm:flex-col items-start flex-col-reverse"
+          >
+            <div id="tcg" class="text-sm sm:text-base">
+              <a href="https://www.tiberiuscg.co.za/"
+                ><strong> Developed by TiberiusCG</strong></a
+              >
+            </div>
+            <p class="text-sm sm:text-base">
+              © Copyright <span id="date"></span>. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- preline carousel -->
+    <script src="./node_modules/preline/dist/preline.js"></script>
+    <script src="./index.js"></script>
+</body>
 </html>
